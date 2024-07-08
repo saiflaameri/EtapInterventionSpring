@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class GroupeProjet implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nom ;
 
     public GroupeProjet() {
