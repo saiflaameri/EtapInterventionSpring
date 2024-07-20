@@ -1,5 +1,6 @@
 package com.example.EtapStage.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class Role implements GrantedAuthority {
 
     @Enumerated(EnumType.STRING)
     private TypeRole typeRole;
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
