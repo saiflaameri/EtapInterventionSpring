@@ -22,6 +22,10 @@ public class JwtService {
     public String extractUsername(String token) {
         return extractClaim(token,Claims::getSubject);//subject containes username or email of user this how we can ectract
     }
+    public String extractPrenom(String token) {
+        return extractClaim(token, claims -> claims.get("prenom", String.class));
+    }
+
 
     public <T> T extractClaim(String token, Function<Claims,T> claimsResolver){
         final  Claims claims=extractAllClaims(token);
